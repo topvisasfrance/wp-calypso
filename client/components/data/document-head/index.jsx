@@ -37,9 +37,9 @@ class DocumentHead extends Component {
 			this.props.setLink( this.props.link );
 		}
 
-		if ( this.props.meta !== undefined ) {
-			this.props.setMeta( this.props.meta );
-		}
+		// @TODO make this dynamic based on color scheme's value for the masterbar
+		const meta = { 'theme-color': '#0087be', ...this.props.meta };
+		this.props.setMeta( meta );
 	}
 
 	componentDidMount() {
