@@ -257,6 +257,7 @@ const Flows = {
 		}
 
 		if (
+			config.isEnabled( 'signup/domains-step-removal' ) &&
 			'onboarding' === flowName &&
 			'onboarding' === getABTestVariation( 'improvedOnboarding' ) &&
 			'remove' === abtest( 'removeDomainsStepFromOnboarding' )
