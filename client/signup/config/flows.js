@@ -257,6 +257,7 @@ const Flows = {
 		}
 
 		if (
+			// The feature flag below is not real since we intentionally disable this feature for now.
 			config.isEnabled( 'signup/domains-step-removal' ) &&
 			'onboarding' === flowName &&
 			'onboarding' === getABTestVariation( 'improvedOnboarding' ) &&

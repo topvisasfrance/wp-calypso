@@ -115,7 +115,6 @@
 		"server-side-rendering": true,
 		"settings/security/monitor": true,
 		"settings/theme-setup": false,
-		"signup/domains-step-removal": false,
 		"signup/onboarding-flow": true,
 		"signup/social": true,
 		"signup/social-management": true,
