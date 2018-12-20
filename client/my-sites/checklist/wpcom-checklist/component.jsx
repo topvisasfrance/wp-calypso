@@ -260,7 +260,14 @@ class WpcomChecklistComponent extends PureComponent {
 	}
 
 	renderTask( task ) {
-		const { siteSlug, viewMode, taskStatuses, designType, isSiteUnlaunched } = this.props;
+		const {
+			siteSlug,
+			viewMode,
+			taskStatuses,
+			designType,
+			isSiteUnlaunched,
+			closePopover,
+		} = this.props;
 
 		let TaskComponent = Task;
 
@@ -283,6 +290,7 @@ class WpcomChecklistComponent extends PureComponent {
 			siteSlug,
 			firstIncomplete,
 			buttonPrimary: firstIncomplete && firstIncomplete.id === task.id,
+			closePopover: closePopover,
 		};
 
 		if ( this.shouldRenderTask( task.id ) ) {
