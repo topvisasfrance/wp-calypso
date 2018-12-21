@@ -6,7 +6,8 @@
 	.is-loading & {
 		display: none;
 	}
-	td, th {
+	td,
+	th {
 		padding: 6px;
 		text-align: center;
 		cursor: pointer;
@@ -14,12 +15,12 @@
 		font-weight: normal;
 		font-size: 12px;
 		text-transform: uppercase;
-		letter-spacing: .1em;
+		letter-spacing: 0.1em;
 	}
 
 	th {
 		font-size: 11px;
-		color: darken( $gray,10 );
+		color: var( --color-neutral-400 );
 	}
 }
 
@@ -31,7 +32,7 @@
 		background: none;
 		text-align: left;
 		font-size: 11px;
-		color: darken( $gray,10 );
+		color: var( --color-neutral-400 );
 	}
 
 	&.level-0 {
@@ -43,20 +44,20 @@
 	}
 
 	&.level-2 {
-		background-color: lighten( $blue-light, 5% );
+		background-color: var( --color-primary-50 );
 	}
 
 	&.level-3 {
-		background-color: lighten( $blue-medium, 5% );
+		background-color: var( --color-primary-200 );
 	}
 
 	&.level-4 {
-		background-color: darken( $blue-medium, 10% );
+		background-color: var( --color-primary-400 );
 		color: white;
 	}
 
 	&.level-5 {
-		background-color: darken( $blue-medium, 30% );
+		background-color: var( --color-primary-800 );
 		color: white;
 	}
 }
@@ -71,7 +72,7 @@
 	padding-top: 10px;
 	float: right;
 
-	@include breakpoint( "<960px" ) {
+	@include breakpoint( '<960px' ) {
 		float: none;
 		margin: 0 auto;
 		margin-bottom: 25px;
@@ -86,8 +87,8 @@
 
 .stats-views__key-label {
 	font-size: 11px;
-	color: $gray;
-	letter-spacing: .1em;
+	color: var( --color-neutral );
+	letter-spacing: 0.1em;
 	text-transform: uppercase;
 }
 
