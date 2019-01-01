@@ -135,7 +135,7 @@
     "key-mirror": "1.0.1",
     "keymaster": "1.6.2",
     "lerna": "3.6.0",
-    "loader-utils": "1.1.0",
+    "loader-utils": "1.2.3",
     "localforage": "1.7.3",
     "lodash": "4.17.11",
     "lru": "3.1.0",
