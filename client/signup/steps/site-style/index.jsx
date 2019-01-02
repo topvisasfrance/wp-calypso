@@ -36,6 +36,7 @@ export class SiteStyleStep extends Component {
 		flowName: PropTypes.string,
 		goToNextStep: PropTypes.func.isRequired,
 		positionInFlow: PropTypes.number,
+		showSiteMockups: PropTypes.bool,
 		submitSiteStyle: PropTypes.func.isRequired,
 		signupProgress: PropTypes.array,
 		styleOptions: PropTypes.array.isRequired,
@@ -108,7 +109,14 @@ export class SiteStyleStep extends Component {
 	);
 
 	render() {
-		const { flowName, positionInFlow, signupProgress, stepName, translate } = this.props;
+		const {
+			flowName,
+			positionInFlow,
+			showSiteMockups,
+			signupProgress,
+			stepName,
+			translate,
+		} = this.props;
 		const headerText = translate( 'Choose a style' );
 		const subHeaderText = translate(
 			"Choose a style for your site's theme. Don't worry, you can always change it later."
@@ -126,6 +134,7 @@ export class SiteStyleStep extends Component {
 					fallbackSubHeaderText={ subHeaderText }
 					signupProgress={ signupProgress }
 					stepContent={ this.renderContent() }
+					showSiteMockups={ showSiteMockups }
 				/>
 			</div>
 		);
