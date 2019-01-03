@@ -87,7 +87,6 @@
 // Mockup Title
 .site-mockup__title {
 	margin-top: 20px;
-	font-weight: 600;
 	font-size: 60px;
 	line-height: 1.2;
 }
@@ -198,7 +197,7 @@
 		font-size: 20px;
 		line-height: 1.8;
 
-		.has-small-font-size {
+		&.has-small-font-size {
 			font-size: 13px
 		}
 	}
@@ -251,6 +250,10 @@
 		.site-mockup__content {
 			color: #222;
 			font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+		}
+
+		.site-mockup__title {
+			font-weight: 600;
 		}
 
 		.site-mockup__title,
