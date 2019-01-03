@@ -57,7 +57,7 @@
     "@wordpress/token-list": "1.1.0",
     "@wordpress/url": "2.3.2",
     "@wordpress/viewport": "2.0.13",
-    "autoprefixer": "9.4.2",
+    "autoprefixer": "9.4.4",
     "autosize": "4.0.2",
     "babel-loader": "8.0.4",
     "babel-plugin-add-module-exports": "1.0.0",
