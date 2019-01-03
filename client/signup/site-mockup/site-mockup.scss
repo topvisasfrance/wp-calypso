@@ -73,7 +73,7 @@
 }
 
 
-// Demo content - WIP
+// Demo Content
 //
 .site-mockup__content {
 	.site-mockup__viewport.is-desktop & {
@@ -82,9 +82,239 @@
 	.site-mockup__viewport.is-mobile & {
 		padding: 0 16px;
 	}
-	font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
+// Mockup Title
+.site-mockup__title {
+	margin-top: 20px;
+	font-weight: 600;
+	font-size: 60px;
+	line-height: 1.2;
+}
+
+// Mockup Tagline
+.site-mockup__tagline {
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+// Gutenberg Content
+.site-mockup__gutenberg-content {
+	font-size: 20px;
+
+	.wp-block-cover {
+		margin-bottom: 18px;
+		position: relative;
+		background-color: #000;
+		background-size: cover;
+		background-position: center center;
+		min-height: 430px;
+		width: 100%;
+		margin: 0 0 1.5em;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+
+		&.has-background-dim:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background-color: #000;
+			opacity: .5;
+			z-index: 1;
+		}
+
+		&.alignfull {
+			height: 75vh;
+			margin-left: calc(50% - 50vw);
+			margin-right: calc(50% - 50vw);
+			width: auto;
+			max-width: 1000%;
+		}
+
+		p.wp-block-cover-text {
+			color: #fff;
+			font-size: 2em;
+			line-height: 1.25;
+			z-index: 1;
+			margin-bottom: 0;
+			max-width: 610px;
+			padding: 14px;
+			text-align: center;
+		}
+	}
+
+	.wp-block-media-text {
+		display: grid;
+		align-items: center;
+		grid-template-areas: "media-text-media media-text-content";
+		grid-template-columns: 50% auto;
+		margin-bottom: 18px;
+
+		&.has-media-on-the-right {
+			grid-template-areas: "media-text-content media-text-media";
+		}
+
+		.wp-block-media-text__media {
+			grid-area: media-text-media;
+			margin: 0;
+
+			img {}
+		}
+
+		.wp-block-media-text__content {
+			word-break: break-word;
+			grid-area: media-text-content;
+			padding: 0 8%;
+
+			p {}
+		}
+	}
+
+	.wp-block-separator {
+		border: none;
+		max-width: 100px;
+		margin: 18px auto;
+		background-color: #ccc;
+		height: 1px;
+	}
+	
+	h2 {
+		font-size: 30px;
+		line-height: 1.2;
+		margin-bottom: 18px;
+	}
+	
+	h3 {
+		font-size: 25px;
+		line-height: 1.44;
+	}
+	
+	p {
+		font-size: 20px;
+		line-height: 1.8;
+
+		.has-small-font-size {
+			font-size: 13px
+		}
+	}
+	
+	.contact-form {
+		label {
+			font-weight: bold;
+			display: block;
+
+			span {
+				font-weight: normal;
+				color: #aaa;
+				margin-left: 4px;
+			}
+		}
+		input {
+			margin-bottom: 4px;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+		}
+		
+		input[type='text'],
+		input[type='email'] {
+			width: 300px;
+		}
+		
+		input[type=submit] {
+			-webkit-appearance: none;
+			border: none;
+			border-radius: 3px;
+			font-size: 14px;
+			line-height: 1.29;
+			margin: 0;
+			padding: 9px 18px;
+		}
+
+		textarea {
+			height: 200px;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			margin-bottom: 4px;
+		}
+	}
+}
+
+
+// Style Variations
+.site-mockup__viewport {
+	&.is-default {
+		.site-mockup__content {
+			color: #222;
+			font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+		}
+
+		.site-mockup__title,
+		.site-mockup__tagline {
+			text-align: center;
+		}
+
+		h2, h3, h4, h5, h6 {
+			font-weight: bold;
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+		}
+
+		.contact-form {
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+
+			input[type=submit] {
+				-webkit-appearance: none;
+				background: #222;
+				border: none;
+				border-radius: 3px;
+				color: #fff;
+				font-size: 14px;
+				font-size: 1.4rem;
+				line-height: 1.29;
+				margin: 0;
+				padding: 9px 18px;
+			}
+		}
+	}
+
+	&.is-modern {
+		.site-mockup__content {
+			color: #222;
+			font-family: 'Montserrat', 'Helvetica Neue', Helvetica, arial, sans-serif;
+		}
+	}
+
+	&.is-vintage {
+		.site-mockup__body {
+			background-color: #eae8dc;
+		}
+		.site-mockup__content {
+			color: #222;
+			font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+		}
+	}
+
+	&.is-colorful {
+		.site-mockup__content {
+			color: #222;
+			font-family: 'Karla', 'Helvetica Neue', Helvetica, arial, sans-serif;
+		}
+
+		h2, h3, h4, h5, h6 {
+			font-weight: bold;
+			color: #71db9d;
+		}
+		
+	}
+}
+
+
+/*
+// Old and prolly useless stuff
 
 // Everything but the cover image has a max-width
 // and is centered inside the viewport.
@@ -115,17 +345,7 @@
 	}
 }
 
-.site-mockup__title {
-	margin-top: 20px;
-	font-weight: 800;
-	font-size: 26px;
-	line-height: 1.2;
-}
 
-.site-mockup__tagline {
-	font-size: 15px;
-	margin-bottom: 20px;
-}
 
 .site-mockup__address {
 	display: inline-block;
@@ -313,3 +533,5 @@
 		height: 40px;
 	}
 }
+*/
+
