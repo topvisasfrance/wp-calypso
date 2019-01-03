@@ -25,6 +25,7 @@ import { getSiteStyle } from 'state/signup/steps/site-style/selectors';
 import { getSiteType } from 'state/signup/steps/site-type/selectors';
 import { getSiteStyleOptions } from 'lib/signup/site-styles';
 import { getSiteVerticalName } from 'state/signup/steps/site-vertical/selectors';
+import { recordTracksEvent } from 'state/analytics/actions';
 
 /**
  * Style dependencies
@@ -57,7 +58,12 @@ export class SiteStyleStep extends Component {
 
 	handleSubmit = event => {
 		event.preventDefault();
-		this.props.submitSiteStyle( this.props.siteStyle, this.getSelectedStyleDataById().theme );
+		const selectedStyleData = this.getSelectedStyleDataById();
+		this.props.submitSiteStyle(
+			this.props.siteStyle,
+			selectedStyleData.theme,
+			selectedStyleData.label
+		);
 	};
 
 	getSelectedStyleDataById( id ) {
@@ -142,8 +148,13 @@ export class SiteStyleStep extends Component {
 }
 
 const mapDispatchToProps = ( dispatch, ownProps ) => ( {
-	submitSiteStyle: ( siteStyle, themeSlugWithRepo ) => {
+	submitSiteStyle: ( siteStyle, themeSlugWithRepo, styleLabel ) => {
 		const { flowName, stepName, goToNextStep } = ownProps;
+		dispatch(
+			recordTracksEvent( 'calypso_signup_actions_submit_site_style', {
+				site_style: styleLabel,
+			} )
+		);
 		SignupActions.submitSignupStep(
 			{
 				processingMessage: i18n.translate( 'Collecting your information' ),
