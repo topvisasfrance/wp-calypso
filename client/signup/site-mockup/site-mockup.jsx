@@ -50,7 +50,7 @@ function SiteMockupContent( { data, title, tagline } ) {
 			<div className="site-mockup__title">{ title }</div>
 			<div className="site-mockup__tagline">{ tagline }</div>
 			<div
-				className="site-mockup__entry-content"
+				className="site-mockup__gutenberg-content"
 				dangerouslySetInnerHTML={ { __html: data.content } }
 			/>
 		</>
